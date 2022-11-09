@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='utf-8'?>
+<scheme version="2.0" title="Attrition" description="Building a predictive model (logistic regression) based on IBM Employee Attrition dataset.">
+	<nodes>
+		<node id="0" name="Datasets" qualified_name="Orange.widgets.data.owdatasets.OWDataSets" project_name="Orange3" version="" title="Datasets" position="(186.0, 112.0)" />
+		<node id="1" name="Data Table" qualified_name="Orange.widgets.data.owtable.OWDataTable" project_name="Orange3" version="" title="View Data" position="(325.0, 176.0)" />
+		<node id="2" name="Select Columns" qualified_name="Orange.widgets.data.owselectcolumns.OWSelectAttributes" project_name="Orange3" version="" title="Select Columns" position="(468.0, 176.0)" />
+		<node id="3" name="Logistic Regression" qualified_name="Orange.widgets.model.owlogisticregression.OWLogisticRegression" project_name="Orange3" version="" title="Logistic Regression" position="(736.0, 540.0)" />
+		<node id="4" name="Test and Score" qualified_name="Orange.widgets.evaluate.owtestandscore.OWTestAndScore" project_name="Orange3" version="" title="Test and Score" position="(1109.0, 177.0)" />
+		<node id="5" name="Predictions" qualified_name="Orange.widgets.evaluate.owpredictions.OWPredictions" project_name="Orange3" version="" title="Predictions" position="(1117.0, 436.0)" />
+		<node id="6" name="Create Instance" qualified_name="Orange.widgets.data.owcreateinstance.OWCreateInstance" project_name="Orange3" version="" title="Create Instance" position="(781.0, 696.0)" />
+		<node id="7" name="Select Columns" qualified_name="Orange.widgets.data.owselectcolumns.OWSelectAttributes" project_name="Orange3" version="" title="Drop Target" position="(606.0, 696.0)" />
+		<node id="8" name="Naive Bayes" qualified_name="Orange.widgets.model.ownaivebayes.OWNaiveBayes" project_name="Orange3" version="" title="Naive Bayes" position="(727.0, 224.0)" />
+		<node id="9" name="Tree" qualified_name="Orange.widgets.model.owtree.OWTreeLearner" project_name="Orange3" version="" title="Tree" position="(727.0, 319.0)" />
+		<node id="10" name="Save Model" qualified_name="Orange.widgets.model.owsavemodel.OWSaveModel" project_name="Orange3" version="" title="Save Model" position="(1055.0, 766.0)" />
+		<node id="11" name="Random Forest" qualified_name="Orange.widgets.model.owrandomforest.OWRandomForest" project_name="Orange3" version="" title="Random Forest" position="(730.0, 417.0)" />
+	</nodes>
+	<links>
+		<link id="0" source_node_id="0" sink_node_id="1" source_channel="Data" sink_channel="Data" enabled="true" />
+		<link id="1" source_node_id="1" sink_node_id="2" source_channel="Selected Data" sink_channel="Data" enabled="true" />
+		<link id="2" source_node_id="2" sink_node_id="3" source_channel="Data" sink_channel="Data" enabled="true" />
+		<link id="3" source_node_id="3" sink_node_id="4" source_channel="Learner" sink_channel="Learner" enabled="true" />
+		<link id="4" source_node_id="2" sink_node_id="4" source_channel="Data" sink_channel="Data" enabled="true" />
+		<link id="5" source_node_id="3" sink_node_id="5" source_channel="Model" sink_channel="Predictors" enabled="true" />
+		<link id="6" source_node_id="2" sink_node_id="7" source_channel="Data" sink_channel="Data" enabled="true" />
+		<link id="7" source_node_id="7" sink_node_id="6" source_channel="Data" sink_channel="Data" enabled="true" />
+		<link id="8" source_node_id="6" sink_node_id="5" source_channel="Data" sink_channel="Data" enabled="true" />
+		<link id="9" source_node_id="8" sink_node_id="4" source_channel="Learner" sink_channel="Learner" enabled="true" />
+		<link id="10" source_node_id="9" sink_node_id="4" source_channel="Learner" sink_channel="Learner" enabled="true" />
+		<link id="11" source_node_id="3" sink_node_id="10" source_channel="Model" sink_channel="Model" enabled="true" />
+		<link id="12" source_node_id="11" sink_node_id="4" source_channel="Learner" sink_channel="Learner" enabled="true" />
+	</links>
+	<annotations />
+	<thumbnail />
+	<node_properties>
+		<properties node_id="0" format="literal">{'controlAreaVisible': True, 'header_state': b'\x00\x00\x00\xff\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x01\x00\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x04)\x00\x00\x00\x07\x01\x01\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00}\xff\xff\xff\xff\x00\x00\x00\x81\x00\x00\x00\x00\x00\x00\x00\x07\x00\x00\x001\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x01M\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00]\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\\\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00L\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00}\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x01)\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x03\xe8\x00\x00\x00\x00}', 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\x01\xd2\x00\x00\x00M\x00\x00\x06\x1f\x00\x00\x03|\x00\x00\x01\xd3\x00\x00\x00s\x00\x00\x06\x1e\x00\x00\x03{\x00\x00\x00\x00\x00\x00\x00\x00\x07\x80\x00\x00\x01\xd3\x00\x00\x00s\x00\x00\x06\x1e\x00\x00\x03{', 'selected_id': 'core\\attrition-train.tab', 'splitter_state': b'\x00\x00\x00\xff\x00\x00\x00\x01\x00\x00\x00\x02\x00\x00\x01,\x00\x00\x00\xc8\x01\xff\xff\xff\xff\x01\x00\x00\x00\x02\x00', '__version__': 1}</properties>
+		<properties node_id="1" format="literal">{'auto_commit': True, 'color_by_class': True, 'controlAreaVisible': True, 'dist_color_RGB': (220, 220, 220, 255), 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\x00,\x00\x00\x002\x00\x00\x06\x88\x00\x00\x02\xfd\x00\x00\x00-\x00\x00\x00X\x00\x00\x06\x87\x00\x00\x02\xfc\x00\x00\x00\x00\x00\x00\x00\x00\x07\x80\x00\x00\x00-\x00\x00\x00X\x00\x00\x06\x87\x00\x00\x02\xfc', 'select_rows': True, 'selected_cols': [], 'selected_rows': [], 'show_attribute_labels': True, 'show_distributions': False, '__version__': 2}</properties>
+		<properties node_id="2" format="pickle">gASVlwMAAAAAAAB9lCiMC2F1dG9fY29tbWl0lIiMEmNvbnRyb2xBcmVhVmlzaWJsZZSIjBNpZ25v
+cmVfbmV3X2ZlYXR1cmVzlImME3NhdmVkV2lkZ2V0R2VvbWV0cnmUQ0IB2dDLAAMAAAAAAkUAAACG
+AAAFkAAAA30AAAJFAAAAhgAABZAAAAN9AAAAAAAAAAAHgAAAAkUAAACGAAAFkAAAA32UjBJ1c2Vf
+aW5wdXRfZmVhdHVyZXOUiYwLX192ZXJzaW9uX1+USwGMEGNvbnRleHRfc2V0dGluZ3OUXZSMFW9y
+YW5nZXdpZGdldC5zZXR0aW5nc5SMB0NvbnRleHSUk5QpgZR9lCiMBnZhbHVlc5R9lCiMEWRvbWFp
+bl9yb2xlX2hpbnRzlH2UKIwISm9iTGV2ZWyUSwKGlIwJYXZhaWxhYmxllEsAhpSMEVBlcmNlbnRT
+YWxhcnlIaWtllEsChpRoFUsBhpSMEVBlcmZvcm1hbmNlUmF0aW5nlEsChpRoFUsChpSMEFN0b2Nr
+T3B0aW9uTGV2ZWyUSwGGlGgVSwOGlIwHSm9iUm9sZZRLAYaUaBVLBIaUjANBZ2WUSwKGlIwJYXR0
+cmlidXRllEsAhpSMDkJ1c2luZXNzVHJhdmVslEsBhpRoJUsBhpSMCkRlcGFydG1lbnSUSwGGlGgl
+SwKGlIwQRGlzdGFuY2VGcm9tSG9tZZRLAoaUaCVLA4aUjAlFZHVjYXRpb26USwGGlGglSwSGlIwG
+R2VuZGVylEsBhpRoJUsFhpSMD0pvYlNhdGlzZmFjdGlvbpRLAoaUaCVLBoaUjA1NYXJpdGFsU3Rh
+dHVzlEsBhpRoJUsHhpSMDU1vbnRobHlJbmNvbWWUSwKGlGglSwiGlIwIT3ZlclRpbWWUSwGGlGgl
+SwmGlIwRVG90YWxXb3JraW5nWWVhcnOUSwKGlGglSwqGlIwOWWVhcnNBdENvbXBhbnmUSwKGlGgl
+SwuGlIwXWWVhcnNTaW5jZUxhc3RQcm9tb3Rpb26USwKGlGglSwyGlIwJQXR0cml0aW9ulEsBhpSM
+BWNsYXNzlEsAhpR1Sv7///+GlGgHSwF1jAphdHRyaWJ1dGVzlH2UKGgjSwJoJ0sBaCpLAWgtSwJo
+MEsBaDNLAWgTSwJoIEsBaDZLAmg5SwFoPEsCaD9LAWgXSwJoGksCaB1LAWhCSwJoRUsCaEhLAmhL
+SwF1jAVtZXRhc5R9lHViYXUu
+</properties>
+		<properties node_id="3" format="literal">{'C_index': 61, 'auto_apply': True, 'class_weight': False, 'controlAreaVisible': True, 'learner_name': '', 'penalty_type': 1, 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\x03\x1a\x00\x00\x01\x06\x00\x00\x04\x07\x00\x00\x02A\x00\x00\x03\x1b\x00\x00\x01,\x00\x00\x04\x06\x00\x00\x02@\x00\x00\x00\x00\x00\x00\x00\x00\x07\x80\x00\x00\x03\x1b\x00\x00\x01,\x00\x00\x04\x06\x00\x00\x02@', '__version__': 1}</properties>
+		<properties node_id="4" format="pickle">gASVKwQAAAAAAAB9lCiMFGNvbXBhcmlzb25fY3JpdGVyaW9ulEsCjBJjb250cm9sQXJlYVZpc2li
+bGWUiIwNY3Zfc3RyYXRpZmllZJSIjAduX2ZvbGRzlEsCjAluX3JlcGVhdHOUSwOMCnJlc2FtcGxp
+bmeUSwCMBHJvcGWURz+5mZmZmZmajAtzYW1wbGVfc2l6ZZRLCYwTc2F2ZWRXaWRnZXRHZW9tZXRy
+eZRDQgHZ0MsAAwAAAAACGwAAAGcAAAYZAAADUgAAAhwAAACNAAAGGAAAA1EAAAAAAAAAAAeAAAAC
+HAAAAI0AAAYYAAADUZSMEnNodWZmbGVfc3RyYXRpZmllZJSIjAh1c2Vfcm9wZZSJjAtzY29yZV90
+YWJsZZR9lIwMc2hvd25fc2NvcmVzlI+UKIwDQVVDlIwDTVNFlIwCQ0GUjAZSZWNhbGyUjAdDLUlu
+ZGV4lIwCRjGUjARSTVNFlIwCUjKUjANNQUWUjAlQcmVjaXNpb26UkHOMC19fdmVyc2lvbl9flEsD
+jBBjb250ZXh0X3NldHRpbmdzlF2UKIwVb3Jhbmdld2lkZ2V0LnNldHRpbmdzlIwHQ29udGV4dJST
+lCmBlH2UKIwGdmFsdWVzlH2UKIwPY2xhc3Nfc2VsZWN0aW9ulIwhKE5vbmUsIHNob3cgYXZlcmFn
+ZSBvdmVyIGNsYXNzZXMplEr/////hpSMDGZvbGRfZmVhdHVyZZROSv7///+GlIwVZm9sZF9mZWF0
+dXJlX3NlbGVjdGVklIlK/v///4aUaA19lGgbSwN1jAphdHRyaWJ1dGVzlCiMA0FnZZRLAoaUjA5C
+dXNpbmVzc1RyYXZlbJRLAYaUjApEZXBhcnRtZW50lEsBhpSMEERpc3RhbmNlRnJvbUhvbWWUSwKG
+lIwJRWR1Y2F0aW9ulEsBhpSMBkdlbmRlcpRLAYaUjA9Kb2JTYXRpc2ZhY3Rpb26USwKGlIwNTWFy
+aXRhbFN0YXR1c5RLAYaUjA1Nb250aGx5SW5jb21llEsChpSMCE92ZXJUaW1llEsBhpSMEVRvdGFs
+V29ya2luZ1llYXJzlEsChpSMDlllYXJzQXRDb21wYW55lEsChpSMF1llYXJzU2luY2VMYXN0UHJv
+bW90aW9ulEsChpR0lIwFbWV0YXOUKYwKY2xhc3NfdmFyc5SMCUF0dHJpdGlvbpRLAYaUhZR1Ymgg
+KYGUfZQoaCN9lChoJWgmSv////+GlGgoTkr+////hpRoKolK/v///4aUaA19lGgbSwN1aC0oaC5L
+AoaUaDBLAYaUaDJLAYaUaDRLAoaUaDZLAYaUaDhLAYaUjAdKb2JSb2xllEsBhpRoOksChpRoPEsB
+hpRoPksChpRoQEsBhpRoQksChpRoREsChpRoRksChpR0lGhJKWhKaEtLAYaUhZR1YmV1Lg==
+</properties>
+		<properties node_id="5" format="pickle">gASVIwEAAAAAAAB9lCiMEmNvbnRyb2xBcmVhVmlzaWJsZZSIjBNzYXZlZFdpZGdldEdlb21ldHJ5
+lENCAdnQywADAAAAAAK6AAABggAABr0AAAMXAAACugAAAYIAAAa9AAADFwAAAAAAAAAAB4AAAAK6
+AAABggAABr0AAAMXlIwJc2VsZWN0aW9ulF2UjAtzaG93X3Njb3Jlc5SIjAtzY29yZV90YWJsZZR9
+lIwMc2hvd25fc2NvcmVzlI+UKIwDQVVDlIwDTVNFlIwCQ0GUjAZSZWNhbGyUjAdDLUluZGV4lIwC
+RjGUjARSTVNFlIwCUjKUjANNQUWUjAlQcmVjaXNpb26UkHOMC19fdmVyc2lvbl9flEsBjBBjb250
+ZXh0X3NldHRpbmdzlF2UdS4=
+</properties>
+		<properties node_id="6" format="literal">{'append_to_data': False, 'auto_commit': True, 'controlAreaVisible': True, 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\x02\x11\x00\x00\x00u\x00\x00\x06a\x00\x00\x03\xa7\x00\x00\x02\x11\x00\x00\x00u\x00\x00\x06a\x00\x00\x03\xa7\x00\x00\x00\x00\x00\x00\x00\x00\x07\x80\x00\x00\x02\x11\x00\x00\x00u\x00\x00\x06a\x00\x00\x03\xa7', 'values': {'Age': 36.0, 'BusinessTravel': 2, 'Department': 1, 'DistanceFromHome': 7.0, 'Education': 3, 'Gender': 1, 'JobSatisfaction': 3.0, 'MaritalStatus': 1, 'MonthlyIncome': 4919.0, 'OverTime': 0, 'TotalWorkingYears': 10.0, 'YearsAtCompany': 5.0, 'YearsSinceLastPromotion': 1.0}, '__version__': 1}</properties>
+		<properties node_id="7" format="pickle">gASVHwQAAAAAAAB9lCiMC2F1dG9fY29tbWl0lIiMEmNvbnRyb2xBcmVhVmlzaWJsZZSIjBNpZ25v
+cmVfbmV3X2ZlYXR1cmVzlImME3NhdmVkV2lkZ2V0R2VvbWV0cnmUQ0IB2dDLAAMAAAAAApMAAACs
+AAAE7AAAAyoAAAKUAAAA0gAABOsAAAMpAAAAAAAAAAAHgAAAApQAAADSAAAE6wAAAymUjBJ1c2Vf
+aW5wdXRfZmVhdHVyZXOUiYwLX192ZXJzaW9uX1+USwGMEGNvbnRleHRfc2V0dGluZ3OUXZQojBVv
+cmFuZ2V3aWRnZXQuc2V0dGluZ3OUjAdDb250ZXh0lJOUKYGUfZQojAZ2YWx1ZXOUfZQojBFkb21h
+aW5fcm9sZV9oaW50c5R9lCiMCUF0dHJpdGlvbpRLAYaUjAlhdmFpbGFibGWUSwCGlIwDQWdllEsC
+hpSMCWF0dHJpYnV0ZZRLAIaUjA5CdXNpbmVzc1RyYXZlbJRLAYaUaBlLAYaUjApEZXBhcnRtZW50
+lEsBhpRoGUsChpSMEERpc3RhbmNlRnJvbUhvbWWUSwKGlGgZSwOGlIwJRWR1Y2F0aW9ulEsBhpRo
+GUsEhpSMBkdlbmRlcpRLAYaUaBlLBYaUjA9Kb2JTYXRpc2ZhY3Rpb26USwKGlGgZSwaGlIwNTWFy
+aXRhbFN0YXR1c5RLAYaUaBlLB4aUjA1Nb250aGx5SW5jb21llEsChpRoGUsIhpSMCE92ZXJUaW1l
+lEsBhpRoGUsJhpSMEVRvdGFsV29ya2luZ1llYXJzlEsChpRoGUsKhpSMDlllYXJzQXRDb21wYW55
+lEsChpRoGUsLhpSMF1llYXJzU2luY2VMYXN0UHJvbW90aW9ulEsChpRoGUsMhpR1Sv7///+GlGgH
+SwF1jAphdHRyaWJ1dGVzlH2UKGgXSwJoG0sBaB5LAWghSwJoJEsBaCdLAWgqSwJoLUsBaDBLAmgz
+SwFoNksCaDlLAmg8SwJoE0sBdYwFbWV0YXOUfZR1YmgMKYGUfZQoaA99lChoEX2UKGgTSwGGlGgV
+SwCGlGgXSwKGlGgZSwCGlGgbSwGGlGgZSwGGlGgeSwGGlGgZSwKGlGghSwKGlGgZSwOGlGgkSwGG
+lGgZSwSGlGgnSwGGlGgZSwWGlIwHSm9iUm9sZZRLAYaUaBlLBoaUaCpLAoaUaBlLB4aUaC1LAYaU
+aBlLCIaUaDBLAoaUaBlLCYaUaDNLAYaUaBlLCoaUaDZLAoaUaBlLC4aUaDlLAoaUaBlLDIaUaDxL
+AoaUaBlLDYaUdUr+////hpRoB0sBdWhAfZQoaBdLAmgbSwFoHksBaCFLAmgkSwFoJ0sBaFZLAWgq
+SwJoLUsBaDBLAmgzSwFoNksCaDlLAmg8SwJoE0sBdWhCfZR1YmV1Lg==
+</properties>
+		<properties node_id="8" format="literal">{'auto_apply': True, 'controlAreaVisible': True, 'learner_name': '', 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\x03^\x00\x00\x01\x98\x00\x00\x04"\x00\x00\x02&gt;\x00\x00\x03_\x00\x00\x01\xbe\x00\x00\x04!\x00\x00\x02=\x00\x00\x00\x00\x00\x00\x00\x00\x07\x80\x00\x00\x03_\x00\x00\x01\xbe\x00\x00\x04!\x00\x00\x02=', '__version__': 1}</properties>
+		<properties node_id="9" format="literal">{'auto_apply': True, 'binary_trees': False, 'controlAreaVisible': True, 'learner_name': '', 'limit_depth': True, 'limit_majority': True, 'limit_min_internal': True, 'limit_min_leaf': True, 'max_depth': 100, 'min_internal': 5, 'min_leaf': 5, 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\x02\xfb\x00\x00\x00\xb0\x00\x00\x04Q\x00\x00\x01\xf8\x00\x00\x02\xfb\x00\x00\x00\xb0\x00\x00\x04Q\x00\x00\x01\xf8\x00\x00\x00\x00\x00\x00\x00\x00\x07\x80\x00\x00\x02\xfb\x00\x00\x00\xb0\x00\x00\x04Q\x00\x00\x01\xf8', 'sufficient_majority': 95, '__version__': 1}</properties>
+		<properties node_id="10" format="literal">{'auto_save': False, 'controlAreaVisible': True, 'filter': 'Pickled model (*.pkcls)', 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\x03U\x00\x00\x01A\x00\x00\x04V\x00\x00\x01\xd2\x00\x00\x03V\x00\x00\x01g\x00\x00\x04U\x00\x00\x01\xd1\x00\x00\x00\x00\x00\x00\x00\x00\x07\x80\x00\x00\x03V\x00\x00\x01g\x00\x00\x04U\x00\x00\x01\xd1', 'stored_name': 'logistic.pkcls', 'stored_path': 'C:/Users/gabriel/Projects/Attrition/Learning', '__version__': 1}</properties>
+		<properties node_id="11" format="literal">{'auto_apply': True, 'class_weight': False, 'controlAreaVisible': True, 'index_output': 0, 'learner_name': '', 'max_depth': 3, 'max_features': 5, 'min_samples_split': 5, 'n_estimators': 10, 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\x02\xf6\x00\x00\x01&amp;\x00\x00\x04\x89\x00\x00\x02\xb0\x00\x00\x02\xf7\x00\x00\x01L\x00\x00\x04\x88\x00\x00\x02\xaf\x00\x00\x00\x00\x00\x00\x00\x00\x07\x80\x00\x00\x02\xf7\x00\x00\x01L\x00\x00\x04\x88\x00\x00\x02\xaf', 'use_max_depth': False, 'use_max_features': False, 'use_min_samples_split': True, 'use_random_state': False, '__version__': 1}</properties>
+	</node_properties>
+	<session_state>
+		<window_groups />
+	</session_state>
+</scheme>
