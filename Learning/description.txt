@@ -42,3 +42,11 @@ WorkLifeBalance
 2 'Good'
 3 'Better'
 4 'Best'
+
+
+I only use:
+  Age, BusinessTravel, Department, DistanceFromHome, Education, Gender, JobSatisfaction,
+  MaritalStatus, MonthlyIncome, OverTime, TotalWorkingYears, YearsAtCompany, YearsSinceLastPromotion
+
+An example datum:
+[36.0, "Travel_Rarely", "Research & Development", 16.3, 4.0, "Male", 2.5, "Married", 1469.4, "Yes", 15.0, 2.0, 2.0]

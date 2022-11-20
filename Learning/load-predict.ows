@@ -6,12 +6,14 @@
 		<node id="2" name="Datasets" qualified_name="Orange.widgets.data.owdatasets.OWDataSets" project_name="Orange3" version="" title="Datasets" position="(150, 150)" />
 		<node id="3" name="Select Columns" qualified_name="Orange.widgets.data.owselectcolumns.OWSelectAttributes" project_name="Orange3" version="" title="Select Columns" position="(300, 150)" />
 		<node id="4" name="Create Instance" qualified_name="Orange.widgets.data.owcreateinstance.OWCreateInstance" project_name="Orange3" version="" title="Create Instance" position="(450, 150)" />
+		<node id="5" name="Save Data" qualified_name="Orange.widgets.data.owsave.OWSave" project_name="Orange3" version="" title="Save Data" position="(611.0, 135.0)" />
 	</nodes>
 	<links>
 		<link id="0" source_node_id="0" sink_node_id="1" source_channel="Model" sink_channel="Predictors" enabled="true" />
 		<link id="1" source_node_id="2" sink_node_id="3" source_channel="Data" sink_channel="Data" enabled="true" />
 		<link id="2" source_node_id="3" sink_node_id="4" source_channel="Data" sink_channel="Data" enabled="true" />
 		<link id="3" source_node_id="4" sink_node_id="1" source_channel="Data" sink_channel="Data" enabled="true" />
+		<link id="4" source_node_id="4" sink_node_id="5" source_channel="Data" sink_channel="Data" enabled="true" />
 	</links>
 	<annotations />
 	<thumbnail />
@@ -27,8 +29,8 @@ X5RLAXUu
 		<properties node_id="1" format="pickle">gASVJgEAAAAAAAB9lCiMEmNvbnRyb2xBcmVhVmlzaWJsZZSIjBNzYXZlZFdpZGdldEdlb21ldHJ5
 lENCAdnQywADAAAAAAAmAAAAzgAABP0AAALhAAAAJwAAAPQAAAT8AAAC4AAAAAAAAAAAB4AAAAAn
 AAAA9AAABPwAAALglIwJc2VsZWN0aW9ulF2USwBhjAtzaG93X3Njb3Jlc5SIjAtzY29yZV90YWJs
-ZZR9lIwMc2hvd25fc2NvcmVzlI+UKIwDQVVDlIwDTVNFlIwCQ0GUjAZSZWNhbGyUjAdDLUluZGV4
-lIwCRjGUjARSTVNFlIwCUjKUjANNQUWUjAlQcmVjaXNpb26UkHOMC19fdmVyc2lvbl9flEsBjBBj
+ZZR9lIwMc2hvd25fc2NvcmVzlI+UKIwHQy1JbmRleJSMAlIylIwCRjGUjANBVUOUjAZSZWNhbGyU
+jAJDQZSMA01BRZSMCVByZWNpc2lvbpSMA01TRZSMBFJNU0WUkHOMC19fdmVyc2lvbl9flEsBjBBj
 b250ZXh0X3NldHRpbmdzlF2UdS4=
 </properties>
 		<properties node_id="2" format="literal">{'controlAreaVisible': True, 'header_state': b'\x00\x00\x00\xff\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x01\x00\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x04)\x00\x00\x00\x07\x01\x01\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00}\xff\xff\xff\xff\x00\x00\x00\x81\x00\x00\x00\x00\x00\x00\x00\x07\x00\x00\x001\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x01M\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00]\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\\\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00L\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00}\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x01)\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x03\xe8\x00\x00\x00\x00}', 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\x01\x99\x00\x00\x00\xde\x00\x00\x05\xe6\x00\x00\x02\xf8\x00\x00\x01\x9a\x00\x00\x01\x04\x00\x00\x05\xe5\x00\x00\x02\xf7\x00\x00\x00\x00\x00\x00\x00\x00\x07\x80\x00\x00\x01\x9a\x00\x00\x01\x04\x00\x00\x05\xe5\x00\x00\x02\xf7', 'selected_id': 'core\\attrition-train.tab', 'splitter_state': b'\x00\x00\x00\xff\x00\x00\x00\x01\x00\x00\x00\x02\x00\x00\x01,\x00\x00\x00\xc8\x01\xff\xff\xff\xff\x01\x00\x00\x00\x02\x00', '__version__': 1}</properties>
@@ -51,6 +53,7 @@ AWgXSwJoGksBaDlLAmg8SwFoP0sCaEJLAWgdSwJoIEsCaCNLAWhFSwJoSEsCaEtLAmgTSwF1jAVt
 ZXRhc5R9lHViYXUu
 </properties>
 		<properties node_id="4" format="literal">{'append_to_data': False, 'auto_commit': True, 'controlAreaVisible': True, 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\x03\x08\x00\x00\x00P\x00\x00\x075\x00\x00\x03k\x00\x00\x03\t\x00\x00\x00v\x00\x00\x074\x00\x00\x03j\x00\x00\x00\x00\x00\x00\x00\x00\x07\x80\x00\x00\x03\t\x00\x00\x00v\x00\x00\x074\x00\x00\x03j', 'values': {'Age': 36.0, 'BusinessTravel': 2, 'Department': 1, 'DistanceFromHome': 16.3, 'Education': 3, 'Gender': 1, 'JobSatisfaction': 2.5, 'MaritalStatus': 1, 'MonthlyIncome': 1469.4, 'OverTime': 1, 'TotalWorkingYears': 15.0, 'YearsAtCompany': 2.0, 'YearsSinceLastPromotion': 2.0}, '__version__': 1}</properties>
+		<properties node_id="5" format="literal">{'add_type_annotations': True, 'auto_save': False, 'controlAreaVisible': True, 'filter': 'Comma-separated values (*.csv)', 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\n\xd1\x00\x00\x01\xa2\x00\x00\x0b\xb5\x00\x00\x02G\x00\x00\n\xd2\x00\x00\x01\xc1\x00\x00\x0b\xb4\x00\x00\x02F\x00\x00\x00\x01\x00\x00\x00\x00\x07\x80\x00\x00\n\xd2\x00\x00\x01\xc1\x00\x00\x0b\xb4\x00\x00\x02F', 'stored_name': 'example.csv', 'stored_path': 'C:/Users/gabriel/Projects/Attrition/Learning', '__version__': 3}</properties>
 	</node_properties>
 	<session_state>
 		<window_groups />
