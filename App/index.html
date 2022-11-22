@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+  <!-- <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css"> -->
+  <!-- <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css"> -->
+  <style>
+    .footer { margin-top: 3em; }
+  </style>
+
+  <title>I had enough!</title>
+</head>
+<body>
+<div class="container grid-lg">
+  <div class="columns">
+    <div class="column col-12">
+      <h1>I had enough!</h1>
+      <h2><em>Should I really quit?</em></h2>
+
+      <form class="form-horizontal">
+        <div class="form-group">
+          <div class="col-3 col-sm-12">
+            <label class="form-label" for="input-age">Age</label>
+          </div>
+          <div class="col-6 col-sm-12">
+            <input class="form-input" id="input-age" type="number" value="30">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-3 col-sm-12">
+            <label class="form-label">Business travel</label>
+          </div>
+          <div class="col-6 col-sm-12">
+            <select class="form-select" id="input-travel">
+              <option value="Non-Travel">No travel</option>
+              <option value="Travel_Rarely">Travel rarely</option>
+              <option value="Travel_Frequently">Travel frequently</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-3 col-sm-12">
+            <label class="form-label">Department</label>
+          </div>
+          <div class="col-6 col-sm-12">
+            <select class="form-select" id="input-department">
+              <option value="Research & Development">Research & Development</option>
+              <option value="Human Resources">Human Resources</option>
+              <option value="Sales">Sales</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-3 col-sm-12">
+            <label class="form-label" for="input-distance">Distance from home</label>
+          </div>
+          <div class="col-6 col-sm-12">
+            <input class="form-input" id="input-distance" type="number" value="50">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-3 col-sm-12">
+            <label class="form-label">Education</label>
+          </div>
+          <div class="col-6 col-sm-12">
+            <select class="form-select" id="input-education">
+              <option value="1">Below College</option>
+              <option value="2">College</option>
+              <option value="3">Bachelor</option>
+              <option value="4">Master</option>
+              <option value="5">Doctor</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-3 col-sm-12">
+            <label class="form-label">Gender</label>
+          </div>
+          <div class="col-6 col-sm-12">
+            <select class="form-select" id="input-gender">
+              <option>Male</option>
+              <option>Female</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-3 col-sm-12">
+            <label class="form-label">Job satisfaction</label>
+          </div>
+          <div class="col-6 col-sm-12">
+            <select class="form-select" id="input-satisfaction">
+              <option value="1">Low</option>
+              <option value="2">Medium</option>
+              <option value="3">High</option>
+              <option value="4">Very high</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-3 col-sm-12">
+            <label class="form-label">Marital status</label>
+          </div>
+          <div class="col-6 col-sm-12">
+            <select class="form-select" id="input-maritalstatus">
+              <option>Single</option>
+              <option>Married</option>
+              <option>Divorced</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-3 col-sm-12">
+            <label class="form-label" for="input-income">Monthly income</label>
+          </div>
+          <div class="col-6 col-sm-12">
+            <input class="form-input" id="input-income" type="number" value="5000">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-3 col-sm-12">
+            <label class="form-label">Overtime</label>
+          </div>
+          <div class="col-6 col-sm-12">
+            <select class="form-select" id="input-overtime">
+              <option>Yes</option>
+              <option>No</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-3 col-sm-12">
+            <label class="form-label" for="input-totalyears">Total working years</label>
+          </div>
+          <div class="col-6 col-sm-12">
+            <input class="form-input" id="input-totalyears" type="number" value="10">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-3 col-sm-12">
+            <label class="form-label" for="input-years">Years at the company</label>
+          </div>
+          <div class="col-6 col-sm-12">
+            <input class="form-input" id="input-years" type="number" value="1">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-3 col-sm-12">
+            <label class="form-label" for="input-lastpromo">Years since last promotion</label>
+          </div>
+          <div class="col-6 col-sm-12">
+            <input class="form-input" id="input-lastpromo" type="number" value="1">
+          </div>
+        </div>
+        <div class="col-9 col-sm-12 col-ml-auto">
+          <button class="btn btn-primary" id="find_out">Find out</button>
+        </div>
+      </form>
+    </div> <!-- col-12 -->
+  </div>
+</div>
+
+<!-- footer -->
+<div class="footer container grid-lg">
+  <p>Copyright by <a href="https://github.com/gabriel-fallen">Alex Chichigin</a> ⓒ 2022. Licensed under <a href="https://github.com/gabriel-fallen/attrition/blob/main/LICENSE.md">Blue Oak Model License</a></p>
+</div>
+
+<div class="modal" id="modal-id">
+  <a href="#close" class="modal-overlay" aria-label="Close"></a>
+  <div class="modal-container">
+    <div class="modal-header">
+      <a href="#close" class="btn btn-clear float-right" aria-label="Close"></a>
+      <div class="modal-title h3">The machine says</div>
+    </div>
+    <div class="modal-body">
+      <div class="content">
+        <!-- content here -->
+        <div id="modal-waiting">
+          <p>Wait for it...</p>
+          <div class="loading loading-lg"></div>
+        </div>
+        <div class="d-hide" id="modal-success">
+          <div>
+            <p>
+              You should leave with probability <span class="label label-primary" id="prob-leave">0.5</span>
+              <br />
+              and stay with probability <span class="label label-success" id="prob-stay">0.5</span>
+            </p>
+          </div>
+          <div class="panel">
+            <div class="panel-header text-center bg-warning">
+              <div class="panel-title h5">WARNING</div>
+            </div>
+            <div class="panel-body">
+              <p>Don't blindly trust obscure Machine Learning models on the Internet!</p>
+              <p>
+                The major problem with this one &mdash; it's based on <em>synthetic</em> data.
+                That's "politically correct" term for <em>fake</em> data: there was no survey
+                and no actual people leaving their jobs or staying and reporting on their situation.
+                Researchers simply <em>generated</em> some believably-looking data points from several
+                plausible distributions. Like "the longer since last promotion the more likely an employee
+                to quit". It was never meant to inform decision-making.
+              </p>
+              <p>
+                But event if the data was real it's obviously USA-specific. If you happen
+                to leave in another part of the world your salary and cost of living might
+                differ wildly from what the model assumes. That makes model's suggestions
+                completely inapplicable to your circumstances!
+              </p>
+              <p>And in any case don't let machines make decisions for you! Just because! 😁</p>
+            </div>
+          </div> <!-- panel -->
+        </div>
+        <div class="d-hide" id="modal-error">
+          <h5>Oh no, something went wrong!</h5>
+          <p>We strongly advise you consulting someone more reliable regarding your job situation.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function collect_data() {
+    const iage      = document.getElementById('input-age');
+    const itravel   = document.getElementById('input-travel');
+    const idep      = document.getElementById('input-department');
+    const idist     = document.getElementById('input-distance');
+    const iedu      = document.getElementById('input-education');
+    const igender   = document.getElementById('input-gender');
+    const isat      = document.getElementById('input-satisfaction');
+    const imarital  = document.getElementById('input-maritalstatus');
+    const iincome   = document.getElementById('input-income');
+    const iovertime = document.getElementById('input-overtime');
+    const itotal    = document.getElementById('input-totalyears');
+    const iyears    = document.getElementById('input-years');
+    const ipromo    = document.getElementById('input-lastpromo');
+    const data = JSON.stringify({
+      age:           iage.value,
+      travel:        itravel.value,
+      department:    idep.value,
+      distance:      idist.value,
+      education:     iedu.value,
+      gender:        igender.value,
+      satisfaction:  isat.value,
+      maritalstatus: imarital.value,
+      income:        iincome.value,
+      overtime:      iovertime.value,
+      totalyears:    itotal.value,
+      years:         iyears.value,
+      lastpromotion: ipromo.value
+    });
+    return data;
+  }
+
+  function send_and_handle(data) {
+    fetch('/api/predict.py', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: data
+    }).then(response => response.json()).then(show_predictions).catch(show_error);
+  }
+
+  function find_out(e) {
+    e.preventDefault();
+
+    // show the modal
+    const modal = document.getElementById('modal-id');
+    modal.classList.add('active');
+
+    // get the user data
+    const data = collect_data();
+    // console.log(data);
+    send_and_handle(data);
+  }
+
+  function close_modal(e) {
+    e.preventDefault();
+    const modal = document.getElementById('modal-id');
+    const modalWaiting = document.getElementById('modal-waiting');
+    const modalSuccess = document.getElementById('modal-success');
+    const modalError = document.getElementById('modal-error');
+    modalError.classList.add('d-hide');
+    modalSuccess.classList.add('d-hide');
+    modalWaiting.classList.remove('d-hide');
+    modal.classList.remove('active');
+  }
+
+  function show_predictions({predictions}) {
+    // console.log(`leave = {predictions.leave}, stay = {predictions.stay}`);
+    // set the probabilities
+    const pleave = document.getElementById('prob-leave');
+    const pstay  = document.getElementById('prob-stay');
+    pleave.innerText = predictions.leave;
+    pstay.innerText  = predictions.stay;
+
+    // show the results, hide the rest
+    const modalWaiting = document.getElementById('modal-waiting');
+    const modalSuccess = document.getElementById('modal-success');
+    const modalError = document.getElementById('modal-error');
+    modalWaiting.classList.add('d-hide');
+    modalError.classList.add('d-hide');
+    modalSuccess.classList.remove('d-hide');
+  }
+
+  function show_error(err) {
+    console.error(err);
+    const modalWaiting = document.getElementById('modal-waiting');
+    const modalSuccess = document.getElementById('modal-success');
+    const modalError = document.getElementById('modal-error');
+    modalWaiting.classList.add('d-hide');
+    modalSuccess.classList.add('d-hide');
+    modalError.classList.remove('d-hide');
+  }
+
+  // attach event handlers
+  const btnFindOut = document.getElementById('find_out');
+  btnFindOut.addEventListener('click', find_out);
+
+  const modal = document.getElementById('modal-id');
+  modal.querySelectorAll('a[aria-label="Close"]').forEach((btn) => btn.addEventListener('click', close_modal));
+</script>
+</body>
+</html>
