@@ -1,0 +1,24 @@
+const data = JSON.stringify({
+  age: 36,
+  travel: 'Travel_Rarely',
+  department: 'Research & Development',
+  distance: 16,
+  education: 4,
+  gender: "Male",
+  satisfaction: 2.5,
+  maritalstatus: 'Married',
+  income: 1500,
+  overtime: 'Yes',
+  totalyears: 15,
+  years: 2,
+  lastpromotion: 2
+})
+
+fetch('http://127.0.0.1:8080/', {
+  method: 'POST',
+  headers: {
+    'Accept': 'application/json',
+    'Content-Type': 'application/json'
+  },
+  body: data
+}).then(response => response.json()).then(console.log)
