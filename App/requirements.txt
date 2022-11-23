@@ -1,2 +1,2 @@
 orange3==3.33.0
-flask==1.1
+flask==2.2
