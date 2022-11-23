@@ -44,4 +44,4 @@ def predict():
     return jsonify({"error": repr(e)})
 
 app.logger.setLevel(logging.INFO)
-app.run(host='0.0.0.0', port=8080)
+# app.run(host='0.0.0.0', port=8080)
